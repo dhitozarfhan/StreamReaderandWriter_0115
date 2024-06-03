@@ -15,7 +15,7 @@ int main() {
         cout << "_ ";
         getline(cin, baris);
         if (baris == "q") break;
-        
+
     }
 
     outfile.close();
@@ -24,11 +24,14 @@ int main() {
     infile.open("contohfile.txt");
 
     cout << endl << ">= Membuka dan membaca file" << endl;
-        if (infile.is_open())
+    if (infile.is_open())
+    {
+        while (getline(infile, baris))
         {
-            while (getline(infile, baris))
-            {
-                cout << baris << '\n';
-            }
+            cout << baris << '\n';
         }
+        infile.close();
+    }
+    
+}
 
